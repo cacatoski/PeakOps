@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulusal İnovasyon için Açık Kaynak HPC</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-server me-2"></i>
+                Açık Kaynak HPC
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#anasayfa">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#proje-hakkinda">Proje Hakkında</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#calistay">Çalıştay</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kaynaklar">Kaynaklar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kayit">Kayıt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="anasayfa" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold">Ulusal İnovasyon için Açık Kaynak HPC</h1>
+                    <p class="lead">Yüksek Performanslı Hesaplama (HPC) teknolojileri ile ulusal inovasyon ekosistemini güçlendiriyoruz.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#kayit" class="btn btn-primary btn-lg">Çalıştaya Kayıt Ol</a>
+                        <a href="https://github.com/cacatoski/PeakOps" target="_blank" class="btn btn-outline-light btn-lg">
+                            <i class="fab fa-github me-2"></i>GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <img src="images/hpc-illustration.svg" alt="HPC İllüstrasyonu" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Proje Hakkında Section -->
+    <section id="proje-hakkinda" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title">Proje Hakkında</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Açık Kaynak HPC, ulusal inovasyon ekosistemini güçlendirmek için tasarlanmış bir girişimdir.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h3>Açık Kaynak</h3>
+                        <p>Açık kaynak yazılımlar ve teknolojiler kullanarak herkesin erişebileceği HPC çözümleri sunuyoruz.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Eğitim</h3>
+                        <p>HPC teknolojileri konusunda eğitimler ve çalıştaylar düzenleyerek bilgi paylaşımını destekliyoruz.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>İşbirliği</h3>
+                        <p>Akademi, sanayi ve kamu kurumları arasında işbirliğini teşvik ederek ulusal inovasyon kapasitesini artırıyoruz.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-10 mx-auto">
+                    <div class="github-content" id="readme-content">
+                        <div class="github-header">
+                            <i class="fab fa-github me-2"></i>
+                            <span>README.md</span>
+                        </div>
+                        <div class="github-body">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Yükleniyor...</span>
+                            </div>
+                            <div id="readme-placeholder"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Çalıştay Section -->
+    <section id="calistay" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title">HPC Çalıştayı</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Yüksek Performanslı Hesaplama teknolojileri hakkında bilgi edinmek ve deneyim kazanmak için çalıştayımıza katılın.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="workshop-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="workshop-info">
+                                    <div class="workshop-date">
+                                        <div class="month">Nisan</div>
+                                        <div class="day">15</div>
+                                        <div class="year">2025</div>
+                                    </div>
+                                    <div class="workshop-details mt-4">
+                                        <div class="workshop-detail">
+                                            <i class="fas fa-clock me-2"></i>
+                                            <span>09:00 - 17:00</span>
+                                        </div>
+                                        <div class="workshop-detail">
+                                            <i class="fas fa-map-marker-alt me-2"></i>
+                                            <span>Online</span>
+                                        </div>
+                                        <div class="workshop-detail">
+                                            <i class="fas fa-users me-2"></i>
+                                            <span>Kontenjan: 50 kişi</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="workshop-content">
+                                    <h3>HPC Sistemleri Kurulum ve Yönetim Çalıştayı</h3>
+                                    <p>Bu çalıştayda, açık kaynak yazılımlar kullanarak HPC kümeleri kurma, yapılandırma ve yönetme konularında pratik bilgiler edineceksiniz. SLURM iş planlayıcı, MPI, OpenMP gibi paralel programlama kütüphaneleri ve GPU hesaplama konularında uygulamalı eğitimler yapılacaktır.</p>
+                                    <div class="github-content" id="workshop-content">
+                                        <div class="github-header">
+                                            <i class="fab fa-github me-2"></i>
+                                            <span>workshop_ajandasi.md</span>
+                                        </div>
+                                        <div class="github-body">
+                                            <div class="spinner-border text-primary" role="status">
+                                                <span class="visually-hidden">Yükleniyor...</span>
+                                            </div>
+                                            <div id="workshop-placeholder"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kaynaklar Section -->
+    <section id="kaynaklar" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title">Kaynaklar</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">HPC teknolojileri hakkında faydalı kaynaklar ve dökümanlar.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <i class="fas fa-book me-2"></i>
+                            <h3>Açık Kaynak HPC Faydaları</h3>
+                        </div>
+                        <div class="github-content" id="benefits-content">
+                            <div class="github-header">
+                                <i class="fab fa-github me-2"></i>
+                                <span>acik_kaynak_hpc_faydalari.md</span>
+                            </div>
+                            <div class="github-body">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Yükleniyor...</span>
+                                </div>
+                                <div id="benefits-placeholder"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <i class="fas fa-users me-2"></i>
+                            <h3>Hedef Kitle ve Kurumlar</h3>
+                        </div>
+                        <div class="github-content" id="target-content">
+                            <div class="github-header">
+                                <i class="fab fa-github me-2"></i>
+                                <span>hedef_kitle_ve_kurumlar.md</span>
+                            </div>
+                            <div class="github-body">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Yükleniyor...</span>
+                                </div>
+                                <div id="target-placeholder"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-10 mx-auto">
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span>demo_slurm_gpu_setup.sh</span>
+                            <button class="btn btn-sm btn-outline-light copy-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Kopyala">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <div class="code-body">
+                            <pre><code id="code-placeholder">Yükleniyor...</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kayıt Section -->
+    <section id="kayit" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title">Çalıştaya Kayıt</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">HPC Çalıştayına katılmak için aşağıdaki formu doldurun.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="registration-card">
+                        <form id="registration-form" class="needs-validation" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">Adınız Soyadınız</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                    <div class="invalid-feedback">
+                                        Lütfen adınızı ve soyadınızı girin.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">E-posta Adresiniz</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                    <div class="invalid-feedback">
+                                        Lütfen geçerli bir e-posta adresi girin.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="institution" class="form-label">Kurumunuz</label>
+                                    <input type="text" class="form-control" id="institution">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="position" class="form-label">Pozisyonunuz</label>
+                                    <input type="text" class="form-control" id="position">
+                                </div>
+                                <div class="col-12">
+                                    <label for="experience" class="form-label">HPC Deneyim Seviyeniz</label>
+                                    <select class="form-select" id="experience" required>
+                                        <option value="" selected disabled>Seçiniz...</option>
+                                        <option value="beginner">Başlangıç</option>
+                                        <option value="intermediate">Orta</option>
+                                        <option value="advanced">İleri</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Lütfen deneyim seviyenizi seçin.
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="expectations" class="form-label">Çalıştaydan Beklentileriniz</label>
+                                    <textarea class="form-control" id="expectations" rows="3"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="terms" required>
+                                        <label class="form-check-label" for="terms">
+                                            Kişisel verilerimin işlenmesine izin veriyorum.
+                                        </label>
+                                        <div class="invalid-feedback">
+                                            Devam etmek için onaylamanız gerekiyor.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg">Kayıt Ol</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Ulusal İnovasyon için Açık Kaynak HPC</h5>
+                    <p>Yüksek Performanslı Hesaplama teknolojileri ile ulusal inovasyon ekosistemini güçlendiriyoruz.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/cacatoski/PeakOps" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Hızlı Bağlantılar</h5>
+                    <ul class="footer-links">
+                        <li><a href="#anasayfa">Ana Sayfa</a></li>
+                        <li><a href="#proje-hakkinda">Proje Hakkında</a></li>
+                        <li><a href="#calistay">Çalıştay</a></li>
+                        <li><a href="#kaynaklar">Kaynaklar</a></li>
+                        <li><a href="#kayit">Kayıt</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>İletişim</h5>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-envelope me-2"></i>
+                            <a href="mailto:info@sadecehr.com">info@sadecehr.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-globe me-2"></i>
+                            <a href="https://sadecehr.com" target="_blank">sadecehr.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="copyright">© 2025 Ulusal İnovasyon için Açık Kaynak HPC. Tüm hakları saklıdır.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/highlight.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
