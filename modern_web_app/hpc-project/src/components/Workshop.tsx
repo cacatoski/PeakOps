@@ -272,7 +272,7 @@ const Workshop: React.FC = () => {
             <DialogContent>
               <Box sx={{ height: '80vh', width: '100%', overflow: 'hidden' }}>
                 <iframe 
-                  src="https://form.jotform.com/your-jotform-id" 
+                  src="https://form.jotform.com/250764357313053" 
                   title="HPC Çalıştayı Kayıt Formu"
                   style={{ 
                     width: '100%', 
