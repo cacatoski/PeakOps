@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Container, Typography, Grid, TextField, Button, Paper, IconButton, Link } from '@mui/material';
-import { Email, Phone, LocationOn, Send as SendIcon, LinkedIn, Facebook, Instagram, Twitter, YouTube } from '@mui/icons-material';
+import { Email, Phone, LocationOn, Send as SendIcon, LinkedIn, Twitter, YouTube, GitHub } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import { projectData } from '../data/projectData';
 
@@ -245,27 +245,15 @@ const Contact: React.FC = () => {
               </IconButton>
               <IconButton 
                 component="a" 
-                href={projectData.contact.social.facebook} 
+                href={projectData.contact.social.github} 
                 target="_blank"
                 sx={{
-                  backgroundColor: '#3b5998',
+                  backgroundColor: '#24292e',
                   color: 'white',
-                  '&:hover': { backgroundColor: '#2d4373' }
+                  '&:hover': { backgroundColor: '#1a1e22' }
                 }}
               >
-                <Facebook />
-              </IconButton>
-              <IconButton 
-                component="a" 
-                href={projectData.contact.social.instagram} 
-                target="_blank"
-                sx={{
-                  backgroundColor: '#C13584',
-                  color: 'white',
-                  '&:hover': { backgroundColor: '#8f2762' }
-                }}
-              >
-                <Instagram />
+                <GitHub />
               </IconButton>
               <IconButton 
                 component="a" 

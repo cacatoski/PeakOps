@@ -1,0 +1,24 @@
+# BEGIN React App
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+# Redirect index.html to home.html
+RewriteRule ^$ home.html [L]
+RewriteRule ^index\.html$ home.html [L,R=301]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /home.html [L]
+</IfModule>
+
+# Disable caching
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+</IfModule>
+
+# Disable LiteSpeed Cache
+<IfModule LiteSpeed>
+    CacheDisable public /
+</IfModule>
+# END React App

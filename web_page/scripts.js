@@ -78,13 +78,17 @@ document.addEventListener('DOMContentLoaded', function() {
 // Function to fetch GitHub content
 async function fetchGitHubContent() {
     try {
+        console.log("İçerik yükleme başladı...");
+        
         // Hide spinners after content is loaded
         document.querySelectorAll('.spinner-border').forEach(spinner => {
             spinner.style.display = 'none';
         });
         
         // Add README content directly
-        document.getElementById('readme-placeholder').innerHTML = marked.parse(`# Open Source HPC for National Innovation
+        if (document.getElementById('readme-placeholder')) {
+            console.log("README içeriği yükleniyor...");
+            document.getElementById('readme-placeholder').innerHTML = marked.parse(`# Open Source HPC for National Innovation
 
 ## Proje Hakkında
 Bu proje, açık kaynak Yüksek Performanslı Hesaplama (HPC) teknolojilerinin ulusal inovasyon ve savunma sektöründe kullanımını teşvik etmek, farkındalık yaratmak ve kurumlar arası işbirliğini güçlendirmek amacıyla oluşturulmuştur.
@@ -101,9 +105,12 @@ Bu proje, açık kaynak Yüksek Performanslı Hesaplama (HPC) teknolojilerinin u
 - **project_management/**: Proje takibi için Kanban board ve görev yönetimi
 - **resources/**: Katılımcılar için kaynaklar, kitapçıklar ve eğitim materyalleri
 - **documentation/**: Proje dokümantasyonu ve teknik belgeler`);
+        }
         
         // Add workshop content directly
-        document.getElementById('workshop-placeholder').innerHTML = marked.parse(`# Ulusal İnovasyon için Açık Kaynak HPC Workshop Ajandası
+        if (document.getElementById('workshop-placeholder')) {
+            console.log("Workshop içeriği yükleniyor...");
+            document.getElementById('workshop-placeholder').innerHTML = marked.parse(`# Ulusal İnovasyon için Açık Kaynak HPC Workshop Ajandası
 
 ## Etkinlik Bilgileri
 
@@ -149,9 +156,12 @@ Bu proje, açık kaynak Yüksek Performanslı Hesaplama (HPC) teknolojilerinin u
 - Workshop çıktılarının özetlenmesi
 - Sonraki adımlar ve eylem planı
 - Teşekkür ve kapanış`);
+        }
         
         // Add benefits content directly
-        document.getElementById('benefits-placeholder').innerHTML = marked.parse(`# Açık Kaynak HPC Çözümlerinin Ulusal İnovasyon İçin Faydaları
+        if (document.getElementById('benefits-placeholder')) {
+            console.log("Faydalar içeriği yükleniyor...");
+            document.getElementById('benefits-placeholder').innerHTML = marked.parse(`# Açık Kaynak HPC Çözümlerinin Ulusal İnovasyon İçin Faydaları
 
 ## Stratejik Faydalar
 
@@ -176,9 +186,12 @@ Bu proje, açık kaynak Yüksek Performanslı Hesaplama (HPC) teknolojilerinin u
 - **Uzun Vadeli Maliyet Avantajı**: 3-5 yıllık perspektifte önemli maliyet avantajı
 - **Bakım ve Destek Esnekliği**: Tek bir tedarikçiye bağlı kalmadan bakım ve destek
 - **Yükseltme Maliyetlerinin Azalması**: Kademeli ve ihtiyaca göre yükseltme imkanı`);
+        }
         
         // Add target audience content directly
-        document.getElementById('target-placeholder').innerHTML = marked.parse(`# Hedef Kitle ve Kurumlar Analizi
+        if (document.getElementById('target-placeholder')) {
+            console.log("Hedef kitle içeriği yükleniyor...");
+            document.getElementById('target-placeholder').innerHTML = marked.parse(`# Hedef Kitle ve Kurumlar Analizi
 
 ## Hedef Sektörler
 
@@ -211,9 +224,12 @@ Akademik kurumlar, bilimsel araştırmalar, simülasyonlar ve veri analizi için
 2. **ODTÜ BUYEM**
 3. **Boğaziçi Üniversitesi**
 4. **Sabancı Üniversitesi**`);
+        }
         
         // Add code content directly
-        document.getElementById('code-placeholder').textContent = `#!/bin/bash
+        if (document.getElementById('code-placeholder')) {
+            console.log("Kod içeriği yükleniyor...");
+            document.getElementById('code-placeholder').textContent = `#!/bin/bash
 # Demo Script: Slurm Cluster with GPU Support for AI Training
 # Open Source HPC for National Innovation Workshop
 # 
@@ -284,11 +300,19 @@ services:
 networks:
   slurm-net:
 EOF`;
+        }
         
+        console.log("Syntax highlighting uygulanıyor...");
         // Apply syntax highlighting to code blocks
         document.querySelectorAll('pre code').forEach((block) => {
-            hljs.highlightElement(block);
+            try {
+                hljs.highlightElement(block);
+            } catch (e) {
+                console.error("Syntax highlighting hatası:", e);
+            }
         });
+        
+        console.log("İçerik yükleme tamamlandı.");
     } catch (error) {
         console.error('Error loading content:', error);
         document.querySelectorAll('.github-body').forEach(body => {
@@ -296,6 +320,12 @@ EOF`;
         });
     }
 }
+
+// Sayfa yüklendiğinde içeriği yükle
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("Sayfa yüklendi, içerik yükleme başlatılıyor...");
+    fetchGitHubContent();
+});
 
 // Navbar scroll effect
 window.addEventListener('scroll', function() {

@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+
+# Eğer dosya veya dizin mevcut değilse
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Tüm istekleri index.html'e yönlendir
+RewriteRule ^(.*)$ index.html [L]

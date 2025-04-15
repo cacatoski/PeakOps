@@ -1,0 +1,9 @@
+# Simple React App Config
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /hpc/
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /hpc/index.html [L]
+</IfModule>

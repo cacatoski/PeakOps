@@ -1,11 +1,11 @@
 export const projectData = {
-  title: "Ulusal İnovasyon için Açık Kaynak HPC",
-  description: "Bu proje, açık kaynak Yüksek Performanslı Hesaplama (HPC) teknolojilerinin ulusal inovasyon ve savunma sektöründe kullanımını teşvik etmek, farkındalık yaratmak ve kurumlar arası işbirliğini güçlendirmek amacıyla oluşturulmuştur.",
+  title: "UHPC - Ulusal Yüksek Performanslı Hesaplama Merkezi",
+  description: "Türkiye'nin Yüksek Performanslı Hesaplama (HPC) alanındaki öncü kuruluşu olarak, ulusal inovasyon ve savunma sektöründe teknolojik bağımsızlığı destekliyor, araştırma ve geliştirme faaliyetlerini hızlandırıyoruz.",
   objectives: [
-    "Açık kaynak HPC'nin savunma ve kamu sektöründeki farkındalığını artırmak",
-    "PeakOps'un bilgi birikimini sosyal sorumluluk çatısında görünür kılmak",
-    "Potansiyel ortaklıklara ve danışmanlık işlerine kapı aralamak",
-    "Ulusal yazılım/hardware ekosistemine katkıda bulunmak"
+    "Ulusal HPC altyapısını güçlendirmek ve yaygınlaştırmak",
+    "Akademi ve endüstri işbirliklerini geliştirmek",
+    "Yüksek performanslı hesaplama konusunda uzman yetiştirmek",
+    "Stratejik sektörlerde teknolojik bağımsızlığı desteklemek"
   ],
   structure: [
     {
@@ -30,15 +30,14 @@ export const projectData = {
     }
   ],
   contact: {
-    email: "info@peakops.co",
-    phone: "+90 312 XXX XX XX",
-    address: "HAB OSB Mah. G2 Cad. No:6 KahramanKazan / ANKARA",
+    email: "info@ulusalhpc.org",
+    phone: "+90 553 487 14 00",
+    address: "ODTÜ Teknokent, Çankaya / ANKARA",
     social: {
-      linkedin: "https://www.linkedin.com/company/peakops",
-      facebook: "https://peakops.co",
-      instagram: "https://peakops.co",
-      twitter: "https://peakops.co",
-      youtube: "https://peakops.co"
+      linkedin: "https://www.linkedin.com/company/ulusalhpc",
+      twitter: "https://twitter.com/ulusalhpc",
+      youtube: "https://youtube.com/ulusalhpc",
+      github: "https://github.com/ulusalhpc"
     }
   }
 };

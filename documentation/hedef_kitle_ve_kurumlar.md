@@ -1,23 +1,40 @@
 # Hedef Kitle ve Kurumlar Analizi
 
-## Hedef Sektörler
+## Hedef Sektörler ve Katılım Hedefleri
 
-### 1. Savunma Sanayi
+| Sektör | Hedeflenen Kurum Sayısı | Hedeflenen Katılımcı Sayısı |
+|--------|------------------------|----------------------------|
+| Savunma Sanayi | 5-7 | 15-20 |
+| Kamu Kurumları | 3-5 | 10-15 |
+| Araştırma Merkezleri ve Üniversiteler | 4-6 | 12-18 |
+| Enerji Sektörü | 2-3 | 6-9 |
+| Sağlık ve Biyoteknoloji | 2-3 | 6-9 |
+| **TOPLAM** | **16-24** | **49-71** |
+
+### Sektörel İhtiyaç Analizi
+
+#### 1. Savunma Sanayi
+
 Savunma sanayi, yüksek performanslı hesaplama (HPC) sistemlerini simülasyon, modelleme, veri analizi ve yapay zeka uygulamalarında kullanmaktadır. Açık kaynak HPC çözümleri, maliyet etkinliği ve güvenlik açısından önemli avantajlar sunmaktadır.
 
-### 2. Kamu Kurumları
+#### 2. Kamu Kurumları
+
 Kamu kurumları, büyük veri analizi, bilimsel araştırmalar ve e-devlet hizmetleri için HPC sistemlerine ihtiyaç duymaktadır. Açık kaynak çözümler, bağımsızlık ve sürdürülebilirlik sağlamaktadır.
 
-### 3. Araştırma Merkezleri ve Üniversiteler
+#### 3. Araştırma Merkezleri ve Üniversiteler
+
 Akademik kurumlar, bilimsel araştırmalar, simülasyonlar ve veri analizi için HPC sistemlerini yoğun olarak kullanmaktadır. Açık kaynak çözümler, akademik özgürlük ve işbirliği için ideal bir platform sunmaktadır.
 
-### 4. Enerji Sektörü
+#### 4. Enerji Sektörü
+
 Enerji şirketleri, rezervuar simülasyonları, sismik veri analizi ve enerji üretim optimizasyonu için HPC sistemlerine ihtiyaç duymaktadır.
 
-### 5. Sağlık ve Biyoteknoloji
+#### 5. Sağlık ve Biyoteknoloji
+
 İlaç geliştirme, genom analizi ve tıbbi görüntüleme gibi alanlarda HPC sistemleri kritik öneme sahiptir.
 
 ## Hedef Kurumlar Listesi
+
 
 ### Savunma Sanayi
 1. **ASELSAN**

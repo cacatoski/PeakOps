@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Button, Box, Container, IconButton, Drawer, List, List
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
-import peakOpsLogo from '../assets/peakops-logo.svg';
+import uhpcLogo from '../assets/uhpc-logo.svg';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,11 +29,11 @@ const Navbar: React.FC = () => {
 
   const navItems = [
     { id: 'home', name: 'Ana Sayfa' },
-    { id: 'about', name: 'Hakkında' },
-    { id: 'workshop', name: 'Çalıştay' },
-    { id: 'benefits', name: 'Faydalar' },
-    { id: 'audience', name: 'Hedef Kitle' },
+    { id: 'about', name: 'Hakkımızda' },
+    { id: 'services', name: 'Hizmetler' },
+    { id: 'workshop', name: 'Eğitimler' },
     { id: 'resources', name: 'Kaynaklar' },
+    { id: 'publications', name: 'Yayınlar' },
     { id: 'contact', name: 'İletişim' },
   ];
 
@@ -81,8 +81,8 @@ const Navbar: React.FC = () => {
           >
             <Box
               component="img"
-              src={peakOpsLogo}
-              alt="PeakOps Logo"
+              src={uhpcLogo}
+              alt="UHPC Logo"
               sx={{
                 height: 40,
                 mr: 2,

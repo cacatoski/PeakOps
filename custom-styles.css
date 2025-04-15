@@ -1,0 +1,25 @@
+/* PeakOps Logo Styles */
+.MuiToolbar-root a:first-child {
+  font-size: 0; /* Hide the text */
+  background-image: url('/peakops-logo.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 150px;
+  height: 40px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+/* Ensure other menu items remain visible */
+.MuiToolbar-root a:not(:first-child) {
+  font-size: inherit; /* Restore font size for other links */
+  display: inline-block;
+  visibility: visible;
+}
+
+/* Adjust toolbar layout */
+.MuiToolbar-root {
+  display: flex;
+  align-items: center;
+}
