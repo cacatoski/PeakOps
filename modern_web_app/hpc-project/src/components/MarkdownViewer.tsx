@@ -19,26 +19,40 @@ const MarkdownViewer: React.FC = () => {
       startOnLoad: true,
       theme: 'default',
       securityLevel: 'loose',
+      fontSize: 16,
+      gantt: {
+        titleTopMargin: 25,
+        barHeight: 20,
+        barGap: 4,
+        topPadding: 50,
+        leftPadding: 75,
+        gridLineStartPadding: 35
+      }
     });
   }, []);
+
+  useEffect(() => {
+    if (content) {
+      setTimeout(() => {
+        try {
+          mermaid.run();
+        } catch (error) {
+          console.error('Mermaid diagram rendering error:', error);
+        }
+      }, 100);
+    }
+  }, [content]);
 
   useEffect(() => {
     const fetchContent = async () => {
       try {
         setLoading(true);
         setError('');
-        const response = await fetch(`${location.pathname}.html`);
+        const response = await fetch(location.pathname.replace(/\.html$/, '') + '.md');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-        let content = await response.text();
-        // HTML içeriğinden markdown-body div'ini çıkar
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(content, 'text/html');
-        const markdownBody = doc.querySelector('.markdown-body');
-        if (markdownBody) {
-          content = markdownBody.innerHTML;
-        }
+        const content = await response.text();
         setContent(content);
         // Sayfa yüklendiğinde en üste scroll yap
         window.scrollTo(0, 0);
@@ -79,21 +93,46 @@ const MarkdownViewer: React.FC = () => {
   }
 
   return (
-    <Box sx={{ py: 4 }}>
-      <Container maxWidth="lg">
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
-          <Button
-            startIcon={<ArrowBackIcon />}
-            onClick={() => navigate(-1)}
-            variant="outlined"
-            sx={{ mr: 2 }}
-          >
-            Geri Dön
-          </Button>
-          <img src="/logo.png" alt="UHPC Logo" style={{ height: '40px' }} />
-        </Box>
-        <Paper sx={{ p: 4 }}>
-          <div className="markdown-body">
+    <>
+      <Box sx={{
+        py: 4,
+        backgroundColor: '#f6f8fa',
+        minHeight: 'calc(100vh - 64px)',
+        mt: '64px'
+      }}>
+        <Container maxWidth="lg">
+          <Box sx={{
+            display: 'flex',
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+            mb: 3
+          }}>
+            <Button
+              startIcon={<ArrowBackIcon />}
+              onClick={() => navigate(-1)}
+              variant="contained"
+              sx={{
+                backgroundColor: '#0366d6',
+                color: 'white',
+                '&:hover': {
+                  backgroundColor: '#0255b3'
+                }
+              }}
+            >
+              Geri Dön
+            </Button>
+          </Box>
+          <Paper sx={{
+            p: { xs: 2, sm: 3, md: 4 },
+            borderRadius: 2,
+            boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+            overflow: 'hidden'
+          }}>
+            <div className="markdown-body" style={{
+              padding: 0,
+              fontSize: '16px',
+              lineHeight: 1.6
+            }}>
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
@@ -101,12 +140,25 @@ const MarkdownViewer: React.FC = () => {
                   const match = /language-(\w+)/.exec(className || '');
                   if (match && match[1] === 'mermaid') {
                     return (
-                      <div className="mermaid">
+                      <div className="mermaid" style={{
+                        backgroundColor: 'white',
+                        padding: '20px',
+                        borderRadius: '8px',
+                        boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
+                        margin: '20px 0',
+                        overflow: 'auto'
+                      }}>
                         {String(children).replace(/\n$/, '')}
                       </div>
                     );
                   }
-                  return (
+                  return (match && match[1]) ? (
+                    <pre className={`hljs ${match[1]}`}>
+                      <code className={`language-${match[1]}`} {...props}>
+                        {children}
+                      </code>
+                    </pre>
+                  ) : (
                     <code className={className} {...props}>
                       {children}
                     </code>
@@ -120,6 +172,7 @@ const MarkdownViewer: React.FC = () => {
         </Paper>
       </Container>
     </Box>
+    </>
   );
 };
 

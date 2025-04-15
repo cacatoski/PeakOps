@@ -172,7 +172,7 @@ const Contact: React.FC = () => {
                         Email
                       </Typography>
                       <Typography variant="body1">
-                        {projectData.contact.email}
+                        info@ulusalhpc.org
                       </Typography>
                     </Box>
                   </Box>
@@ -194,7 +194,7 @@ const Contact: React.FC = () => {
                         Telefon
                       </Typography>
                       <Typography variant="body1">
-                        {projectData.contact.phone}
+                        +90 553 487 14 00
                       </Typography>
                     </Box>
                   </Box>
@@ -216,7 +216,7 @@ const Contact: React.FC = () => {
                         Adres
                       </Typography>
                       <Typography variant="body1">
-                        {projectData.contact.address}
+                        Ankara Teknokent Çankaya
                       </Typography>
                     </Box>
                   </Box>

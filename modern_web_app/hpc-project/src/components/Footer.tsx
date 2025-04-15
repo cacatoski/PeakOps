@@ -78,17 +78,17 @@ const Footer: React.FC = () => {
             <Box component="ul" sx={{ pl: 0, listStyle: 'none' }}>
               <Box component="li" sx={{ mb: 1 }}>
                 <Typography variant="body2" sx={{ opacity: 0.8 }}>
-                  Email: info@peakops.com
+                  Email: info@ulusalhpc.org
                 </Typography>
               </Box>
               <Box component="li" sx={{ mb: 1 }}>
                 <Typography variant="body2" sx={{ opacity: 0.8 }}>
-                  Telefon: +90 212 XXX XX XX
+                  Telefon: +90 553 487 14 00
                 </Typography>
               </Box>
               <Box component="li" sx={{ mb: 1 }}>
                 <Typography variant="body2" sx={{ opacity: 0.8 }}>
-                  Adres: İstanbul, Türkiye
+                  Adres: Ankara Teknokent Çankaya
                 </Typography>
               </Box>
             </Box>
