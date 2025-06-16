@@ -25,4 +25,4 @@ Proje 8 haftalık bir süreç içinde planlanmıştır:
 - Hafta 8+: Etkinlik Sonrası Takip ve Değerlendirme
 
 ## İletişim
-[İletişim bilgileriniz]
+caglar@peakops.co
